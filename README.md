@@ -14,5 +14,5 @@ Currently includes the following:
 - Gaussian Elimination with Partial Pivoting
 - Gaussian Elimination with Scaled Partial Pivoting
 - LU Decomposition
-- Gauss-Jacobi method
+- Jacobi method
 - Gauss-Seidal method
