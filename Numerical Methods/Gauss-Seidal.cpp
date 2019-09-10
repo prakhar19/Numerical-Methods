@@ -20,7 +20,8 @@ int main() {
     long double x[m] = {0L}, xold[m] = {0L};
     long double s1 = 0L, s2 = 0L;
     
-    for (int iter = 0; iter < MAX_ITERATIONS; iter++) {
+    int iter;
+    for (iter = 0; iter < MAX_ITERATIONS; iter++) {
         for (int i = 0; i < m; i++) {
             s1 = 0L;
             for (int j = 0; j < i; j++) {
@@ -29,7 +30,7 @@ int main() {
 
             s2 = 0L;
             for (int j = i+1; j < n-1; j++) {
-                s2 += mat[i][j] * x[j];
+                s2 += mat[i][j] * xold[j];
             }
             
             x[i] = (mat[i][n-1] - s1 - s2) / mat[i][i];
@@ -44,6 +45,8 @@ int main() {
         }
     }
     
+    cout << "Converged in " << (iter + 1) << " iterations." << endl;
+
     for (int i = 0; i < m; i++) {
         cout << "x" << i << " = " << x[i] << endl;
     }

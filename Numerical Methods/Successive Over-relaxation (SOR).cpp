@@ -1,5 +1,6 @@
 #define MAX_ITERATIONS 1000
 #define TOLERANCE 0.0000000001
+#define OMEGA 0.5
 
 #include <iostream>
 #include <math.h>
@@ -25,7 +26,7 @@ int main() {
         for (int i = 0; i < m; i++) {
             s1 = 0L;
             for (int j = 0; j < i; j++) {
-                s1 += mat[i][j] * xold[j];
+                s1 += mat[i][j] * x[j];
             }
 
             s2 = 0L;
@@ -33,7 +34,7 @@ int main() {
                 s2 += mat[i][j] * xold[j];
             }
             
-            x[i] = (mat[i][n-1] - s1 - s2) / mat[i][i];
+            x[i] = (1 - OMEGA) * xold[i] + OMEGA * (mat[i][n-1] - s1 - s2) / mat[i][i];
         }
         
         if (L2norm(diffMat(x, xold, m), m) < TOLERANCE) {
@@ -44,7 +45,7 @@ int main() {
             xold[i] = x[i];
         }
     }
-
+    
     cout << "Converged in " << (iter + 1) << " iterations." << endl;
 
     for (int i = 0; i < m; i++) {

@@ -16,3 +16,4 @@ Currently includes the following:
 - LU Decomposition
 - Jacobi method
 - Gauss-Seidal method
+- Successive Over-relaxation method
