@@ -1,6 +1,6 @@
 # Numerical Methods
 
-All code currently in C++. Should run in C too with some minor print statement changes, though not tested.
+All code currently in C++. Should run in C too with some minor print statement changes.
 
 ## Included Numerical Methods (C++)
 
