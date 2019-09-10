@@ -2,6 +2,9 @@
 
 All code currently in C++. Should run in C too with some minor print statement changes.
 
+These were mostly done as part of my college course.
+ 
+
 ## Included Numerical Methods (C++)
 
 Currently includes the following:
