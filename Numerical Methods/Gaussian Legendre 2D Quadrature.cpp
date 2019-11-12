@@ -11,13 +11,13 @@ long double legendre_optimized(int, long double);
 long double legendre_derivative(int, long double);
 void get_roots_of_legendre_polynomial(int, long double *);
 
-long double f(long double x) {
-    return x;
+long double f(long double x, long double y) {
+    return x * x + y * y;
 }
 
 int main() {
     int n;
-    long double u, l, weight = 0.0;
+    long double ux, lx, uy, ly, weight = 0.0;
     long double result = 0.0;
     long double *roots, *weights;
 
@@ -27,13 +27,23 @@ int main() {
     roots = new long double[n];
     weights = new long double[n];
 
-    cout << "Enter upper limit: ";
-    cin >> u;
 
-    cout << "Enter lower limit: ";
-    cin >> l;
+    cout << "Integral is of the form ∫∫ f(x, y) dxdy" << endl;
+
+    cout << "Enter upper limit (for dx): ";
+    cin >> ux;
+
+    cout << "Enter lower limit (for dx): ";
+    cin >> lx;
+
+    cout << "Enter upper limit (for dy): ";
+    cin >> uy;
+
+    cout << "Enter lower limit (for dy): ";
+    cin >> ly;
 
     cout << endl;
+
 
     // Get roots of Legendre Polynomial P_n(x)
     get_roots_of_legendre_polynomial(n, roots);
@@ -48,9 +58,11 @@ int main() {
 
     // Aproximating the integral
     for (int i = 0; i < n; i++) {
-        result += weights[i] * f(((u-l) * roots[i] / 2) + (u+l)/2);
+        for (int j = 0; j < n; j++) {
+            result += weights[i] * weights[j] * f(((ux-lx)*roots[i]/2)+(ux+lx)/2, ((uy-ly)*roots[i]/2)+(uy+ly)/2);
+        }
     }
-    result *= (u-l) / 2;
+    result *= (ux-lx) * (uy-ly) / 4;
 
     cout << "Result: " << result << endl;
 
