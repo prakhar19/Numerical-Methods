@@ -23,4 +23,4 @@ Currently includes the following:
 - **Composite simpson's one-third rule Integration**
 - **Composite Trapezoidal Integration**
 - **Gaussian Legendre Quadrature**
-- **Gaussian Legendre Quadrature (2D)** - To solve double integrals of type ∫∫ f(x, y) dxdy
+- **Gaussian Legendre Quadrature (2D)** - To solve definite double integrals of type ∫∫ f(x, y) dxdy
