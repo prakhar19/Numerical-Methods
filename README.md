@@ -24,3 +24,4 @@ Currently includes the following:
 - **Composite Trapezoidal Integration**
 - **Gaussian Legendre Quadrature**
 - **Gaussian Legendre Quadrature (2D)** - To solve definite double integrals of type ∫∫ f(x, y) dxdy
+- **Euler's Method**

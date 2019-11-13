@@ -15,10 +15,10 @@ int main() {
     double *X = new double[n], *Y = new double[n];
 
     for (int i = 0; i < n; i ++) {
-        cout << "x" << (i+1) << ": ";
+        //cout << "x" << (i+1) << ": ";
         cin >> X[i];
 
-        cout << "y" << (i+1) << ": ";
+        //cout << "y" << (i+1) << ": ";
         cin >> Y[i];
     }
 
